@@ -24,8 +24,8 @@ sns.countplot(x='target', data=train_df)
 plt.title('Distribution of Disaster Tweets')
 plt.show()
 
-# Training SGDClassifier. We set the loss function to 'log' to apply logistic regression.
-clf_sgd = SGDClassifier(loss='log', random_state=42)
+# Training SGDClassifier. We set the loss function to 'log' to apply logistic regression and the penalty to 'l2' for ridge regularization.
+clf_sgd = SGDClassifier(loss='log', penalty='l2', random_state=42)
 clf_sgd.fit(X_train, y_train)
 
 # predict the labels on test dataset
